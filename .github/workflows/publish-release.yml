@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main  # 在推送到 `main` 分支时触发工作流
+    tags:
+      - 'v*'
 
 jobs:
   build:
@@ -33,4 +35,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # GitHub 自动提供的访问令牌
         with:
           files: ./publish/*  # 发布所有打包的文件 
-          tag_name: v1.0.0
+          tag_name: ${{ github.ref }}
