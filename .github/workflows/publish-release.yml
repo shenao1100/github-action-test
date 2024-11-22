@@ -32,8 +32,9 @@ jobs:
       - name: Create Release on GitHub
         uses: softprops/action-gh-release@v1  # 用于创建 GitHub Release
         #env:
+        if: startsWith(github.ref, 'refs/tags/')
         with:
           token: ${{ secrets.GITHUB_TOKEN }}  # GitHub 自动提供的访问令牌
-          name: "v1.0.1"
+          #name: "v1.0.1"
           files: ./publish/*  # 发布所有打包的文件 
           #tag_name: ${{ github.ref }}
