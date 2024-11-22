@@ -16,7 +16,7 @@ jobs:
       - name: Set up .NET
         uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: '5.0'  # 设置 .NET SDK 版本
+          dotnet-version: '8.0'  # 设置 .NET SDK 版本
 
       - name: Restore dependencies
         run: dotnet restore  # 恢复依赖项
